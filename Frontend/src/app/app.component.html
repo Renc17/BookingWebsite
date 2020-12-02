@@ -1,0 +1,17 @@
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#" class="logo">BOOKING.com</a></li>
+      <div class="routes">
+        <li class="links"><a *ngIf="!user" href="#"  routerLink="/account/login">Log in</a></li>
+        <li class="links"><a *ngIf="!user" href="#"  routerLink="/account/register">Sign up</a></li>
+        <li class="profilePic" *ngIf="user"><a (click)="visitProfile()"><img [src]="retrievedImage" alt="profile picture"></a></li>
+      </div>
+    </ul>
+  </div>
+</nav>
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>

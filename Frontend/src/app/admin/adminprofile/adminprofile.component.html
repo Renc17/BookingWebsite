@@ -1,0 +1,97 @@
+
+<div class="admin-details">
+  <div class="admin-profile">
+    <div class="admin-header">
+      <div class="avatar">
+        <div *ngIf=retrievedImage>
+          <img [src]="retrievedImage" alt="profile picture">
+        </div>
+      </div>
+
+      <div class="main-details">
+        <label>ADMIN</label>
+        <div class="username" *ngIf="admin">
+          {{ admin.username }}
+        </div>
+      </div>
+    </div>
+    <button (click)="toggleSettings()">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <i class="fa fa-cog fa-spin"></i>
+    </button>
+    <div *ngIf="!isShown" class="admin-settings">
+      <div class="action">
+        <a class="nav-item nav-link" (click)="edit()">Edit Account</a>
+      </div>
+      <div class="action">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="list-users">
+    <table class="table table-striped">
+      <tbody>
+      <tr *ngFor="let user of users">
+        <div class="list-box-container">
+          <div class="images">
+            <div class="profile-pic">
+              <div *ngIf="user.userProfilePic === null">
+                <img [src]="defaultPic | getMainRentalPic" alt="default">
+              </div>
+              <div *ngIf="user.userProfilePic !== null">
+                <img [src]="user.userProfilePic.picByte | getMainRentalPic" alt="profile picture" class="profile-pic">
+              </div>
+            </div>
+          </div>
+          <div class="main-details">
+            <div class="content-box-center">
+              <div class="user-actions">
+                <label>
+                  Username
+                </label>
+                <td>{{user.username}}</td>
+                <label>
+                  Email
+                </label>
+                <td>{{user.email}}</td>
+                <td class="button-user-updates">
+                  <div *ngIf="user.id !== admin.id">
+                    <button (click)="getRentalsByOwner(user.id)" class="btn btn-sm btn-danger btn-rentals-user">
+                      <span>User Rentals</span>
+                    </button>
+                  </div>
+                  <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user">
+                    <span>Delete User</span>
+                  </button>
+                </td>
+              </div>
+              <span class="tooltiptext">
+                <div class="specific-info">
+                  <label>
+                    Name
+                  </label>
+                  <td>{{user.name}}</td>
+                  <label>
+                    Surname
+                  </label>
+                  <td>{{user.surname}}</td>
+                  <label>
+                    Cel
+                  </label>
+                  <td>{{user.cel}}</td>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+        </tr>
+      <tr *ngIf="!users">
+        <td colspan="4" class="text-center">
+          <span class="spinner-border spinner-border-lg align-center"></span>
+          No Users To display
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="rentals">
+  <div class="rentals-header">
+    <div class="title">
+      Search Results for {{ booking.location }}
+    </div>
+    <div class="dates">
+      {{ booking.checkin }} - {{ booking.checkout }}
+    </div>
+  </div>
+  <div class="house-details-box">
+    <table class="table table-striped">
+      <tbody>
+      <tr *ngFor="let rental of rentals">
+        <div class="booking-box-container">
+          <div class="images">
+            <div class="avatar">
+              <img [src] ="rental.rentHouseProfilePic.picByte | getMainRentalPic" alt="profile picture">
+            </div>
+          </div>
+          <div class="main-details">
+            <div class="content-box-center">
+              <label>
+                Name
+              </label>
+              <td>{{rental.name}}</td>
+              <label>
+                Location
+              </label>
+              <td>{{rental.location}}</td>
+              <label>
+                Description
+              </label>
+              <td>{{rental.description}}</td>
+              <div>
+                <td class="price">{{ rental.minPrice }} / night</td>
+              </div>
+              <button (click)="getRental(rental.rentHouse_id)">BOOK</button>
+            </div>
+          </div>
+        </div>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,216 @@
+*{
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.user-detail {
+  height: 100%;
+  background-color: rgb(32,32,32);
+}
+
+.profile {
+  height: 30%;
+  display: flex;
+}
+
+.header .avatar {
+  margin: 10px 10px 10px 10%;
+}
+
+.header .avatar img{
+  margin: 10px 10px 10px 10%;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.75);
+}
+
+.header {
+  background-image: linear-gradient(rgb(64,64,64), rgb(32,32,32));
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.header .main-details {
+  margin: 10px;
+  padding: 50px 3px 3px 3px;
+  height: 30%;
+}
+
+.header label {
+  padding-left: 3px;
+  font-size: 16px;
+}
+
+.header .username {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.header .rate {
+  color: orange;
+}
+
+.settings {
+  width: 10%;
+  padding: 25px;
+  background-color: rgb(32,32,32);
+  text-align: center;
+  box-shadow: -5px 8px 8px rgb(32,32,32);
+}
+
+button {
+  padding: 5px;
+  border: none;
+  background-image: linear-gradient(rgb(64,64,64), rgb(32,32,32));
+}
+
+button i {
+  width: 50px;
+}
+
+.action{
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.rentals {
+  margin-top: 20px;
+  width: 100%;
+  background-color: rgb(32,32,32);
+}
+
+.rentals-header {
+  font-weight: bold;
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.reservations {
+  width: 100%;
+  background-color: rgb(32,32,32);
+}
+
+.reservations-header {
+  font-weight: bold;
+  padding: 20px;
+  margin-left: 30px;
+}
+
+.booking-box-container{
+  width: 1825px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: flex;
+}
+
+.booking-box-container:hover{
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.75);
+}
+
+.rentals-main-details {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.content-box-center{
+  padding-left: 300px;
+}
+
+.rentals-body label {
+  font-weight: bolder;
+  font-size: 18px;
+  padding: 2px;
+  border-bottom: white solid 1px;
+}
+
+td{
+  padding-top: 6px;
+  padding-bottom: 12px;
+}
+
+.rentals-body .images {
+  width: 53%;
+  padding-left: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.rentals-body .avatar img{
+  width: 400px;
+  height: 200px;
+  border-radius: 5%;
+  box-shadow: 0px 7px 10px 6px rgba(0,0,0,0.3);
+}
+
+.rentals button {
+  width: 40%;
+  color: rgba(255,255,255,0.8);
+  font-weight: bold;
+  padding: 4px;
+  border: transparent;
+  background-color: #e3e3e3;
+  margin-left: 5px;
+}
+
+.reservations-header button {
+  width: 40%;
+  color: rgba(255,255,255,0.6);
+  font-weight: bold;
+  padding: 4px;
+  border: transparent;
+  background-color: #e3e3e3;
+  margin-left: 5px;
+}
+
+.rentals button:hover{
+  transition-duration: 0.6s;
+  background-color: crimson;
+  color: #e3e3e3;
+  font-weight: bolder;
+}
+
+.reservations-header button:hover{
+  transition-duration: 0.6s;
+  background-color: crimson;
+  color: #e3e3e3;
+  font-weight: bolder;
+}
+
+.comment {
+  padding: 5px;
+  color: black;
+}
+
+.comment input {
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: rgb(48, 48, 48);
+  border-radius: 2%;
+  border: none;
+  height: 100px;
+  width: 20%;
+  padding: 5px;
+}
+
+.comment button {
+  margin-top: 10px;
+  width: 40%;
+  color: rgba(255,255,255,0.6);
+  font-weight: bold;
+  padding: 4px;
+  border: transparent;
+  background-color: #e3e3e3;
+  margin-left: 5px;
+}
+
+.comment button:hover{
+  transition-duration: 0.6s;
+  background-color: crimson;
+  color: #e3e3e3;
+  font-weight: bolder;
+}

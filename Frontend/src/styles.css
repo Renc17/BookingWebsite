@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@800&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  animation-name: background-animation;
+  animation-iteration-count: infinite;
+  animation-duration: 15s;
+}
+
+@keyframes background-animation {
+  0% { background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/Beach.jpeg") no-repeat fixed; background-size: cover;}
+  33.33% { background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../Images/indonisia.jpg") no-repeat fixed; background-size: cover;}
+  66.66% { background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../Images/Greece.jpg") no-repeat fixed; background-size: cover;}
+  100% { background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../Images/108443-black-white-Eiffel_Tower-Paris-France.jpg") no-repeat fixed; background-size: cover;}
+}
+
+nav{
+  width: 100%;
+  background-color: black;
+}
+
+a{
+  text-decoration: none;
+}
+
+a.logo{
+  font-weight: bolder;
+  font-family: 'Baloo Bhaina 2', cursive;
+  font-size: 20px;
+  color: #e3e3e3;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+.routes{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 70%;
+}
+
+nav ul .links{
+  margin-top: 9px;
+}
+
+nav ul li a{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #e3e3e3;
+}
+
+nav ul li a:hover{
+  color: white;
+}
+
+nav ul li a img{
+  padding: 2px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+nav ul div li a{
+  padding: 1em;
+}
+
+.container{
+  margin-left: 150px;
+}

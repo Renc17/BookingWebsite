@@ -1,0 +1,134 @@
+
+<div class="user-detail">
+  <div class="profile">
+    <div class="header">
+      <div class="avatar">
+        <div *ngIf=retrievedImage>
+          <img [src]="retrievedImage" alt="profile picture">
+        </div>
+      </div>
+
+      <div class="main-details">
+        <label>USER</label>
+        <div class="username" *ngIf="user">
+          {{ user.username }}<br>
+        </div>
+      </div>
+    </div>
+
+    <button (click)="toggleSettings()">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <i class="fa fa-cog fa-spin"></i>
+    </button>
+    <div *ngIf="!isShown" class="settings">
+      <div class="action">
+        <a class="nav-item nav-link" (click)="edit()">Edit Account</a>
+      </div>
+      <div class="action">
+        <a class="nav-item nav-link" (click)="addRentals()">New Rental</a>
+      </div>
+      <div class="action">
+        <a class="nav-item nav-link" (click)="deleteUser(user.id)">Delete Account</a>
+      </div>
+      <div class="action">
+        <a class="nav-item nav-link" (click)="book()">Make A Booking</a>
+      </div>
+      <div class="action">
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="rentals">
+    <div class="rentals-header">
+      <button (click)="toggleRentals()">
+        M y   R e n t a l                   <i class="fa fa-arrow-down"></i>
+      </button>
+      <div *ngIf="!isShownRentals">
+        <div class="rentals-body">
+          <tr *ngFor="let rental of rentals">
+            <div class="booking-box-container">
+              <div class="images">
+                <div class="avatar">
+                  <img [src]="rental.rentHouseProfilePic.picByte | getMainRentalPic" alt="Avatar" class="avatar">
+                </div>
+              </div>
+              <div class="rentals-main-details">
+                <div class="content-box-center">
+                  <label>
+                    Name
+                  </label>
+                  <td>{{rental.name}}</td>
+                  <label>
+                    Location
+                  </label>
+                  <td>{{rental.location}}</td>
+                  <label>
+                    Description
+                  </label>
+                  <td>{{rental.description}}</td>
+                  <button (click)="update(rental.rentHouse_id)">Update</button>
+                  <button (click)="deleteRentalById(rental.rentHouse_id)">Delete</button>
+                </div>
+              </div>
+            </div>
+          </tr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="reservations">
+    <div class="reservations-header">
+      <button (click)="toggleReservations()">
+        M y   R e s e r v a t i o n s                           <i class="fa fa-arrow-down"></i>
+      </button>
+      <div *ngIf="!isShownReservations" >
+        <tr *ngFor="let reservation of reservations">
+          <div class="booking-box-container">
+            <div class="rentals-main-details">
+              <div class="content-box-center">
+                <label>
+                  Check-in
+                </label>
+                <td>{{ reservation.checkin }} </td>
+                <label>
+                  Check-out
+                </label>
+                <td>{{ reservation.checkout }}</td>
+                <label>
+                  Guests
+                </label>
+                <td>{{ reservation.guests }}</td>
+                <label>
+                  Price
+                </label>
+                <td>{{ reservation.price }}</td>
+                <button (click)="getRentalByReservation(reservation.id)">Rental Information</button>
+                <div *ngIf="bookedRentalInfo">
+                  {{ bookedRentalInfo.name }}
+                  {{ bookedRentalInfo.location }}
+                </div>
+                <button (click)="cancelReservation(reservation.id)">Cancel Reservations</button>
+
+
+                <div class="comment">
+                  <form [formGroup]="form" (ngSubmit)="addComment(reservation.id)">
+                    <input type="text" placeholder="Comment Your Experience" formControlName="comment" class="form-control" [ngClass]="{ 'is-invalid': f.comment.errors }" />
+                    <div *ngIf="f.comment.errors" class="invalid-feedback">
+                      <div *ngIf="f.comment.errors.required">comment is required</div>
+                    </div>
+                    <div class="btn">
+                      <button class="btn btn-primary">
+                        Comment Your Experience
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </tr>
+      </div>
+    </div>
+  </div>
+</div>

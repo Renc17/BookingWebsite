@@ -1,0 +1,176 @@
+*{
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.admin-detail {
+  height: 100%;
+}
+
+.admin-profile {
+  display: flex;
+}
+
+.avatar {
+  margin: 10px 10px 10px 10%;
+}
+
+.avatar img{
+  margin: 10px 10px 10px 10%;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.75);
+}
+
+.admin-header {
+  background-image: linear-gradient(rgb(64,64,64), rgb(32,32,32));
+  padding: 10px;
+  width: 100%;
+  display: flex;
+}
+
+.admin-header .main-details {
+  margin: 10px;
+  padding: 50px 3px 3px 3px;
+  height: 30%;
+}
+
+.admin-header label {
+  padding-left: 3px;
+  font-size: 16px;
+}
+
+.admin-header .username {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.list-users {
+  padding-top: 20px;
+  width: 100%;
+  background-color: rgb(32,32,32);
+}
+
+.table {
+  width: 95%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table td {
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+.admin-settings {
+  width: 10%;
+  padding: 25px;
+  background-color: rgb(32,32,32);
+  text-align: center;
+  box-shadow: -5px 8px 8px rgb(32,32,32);
+}
+
+button {
+  border: none;
+  background-image: linear-gradient(rgb(64,64,64), rgb(32,32,32));
+}
+
+button i {
+  width: 50px;
+}
+
+.action{
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-sm {
+  padding: 5px;
+  margin-left: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover {
+  background-color: darkslategray;
+  transition-duration: 0.6s;
+}
+
+.info {
+  text-align: center;
+}
+
+.list-box-container{
+  height: 300px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  display: flex;
+}
+
+.list-box-container:hover{
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.75);
+}
+
+.main-details {
+  padding: 10px;
+}
+
+.content-box-center{
+  padding-top: 5%;
+  padding-left: 300px;
+  display: flex;
+}
+
+.content-box-center .tooltiptext {
+  visibility: hidden;
+}
+
+.content-box-center label {
+  font-size: medium;
+}
+
+.content-box-center:hover .tooltiptext {
+  visibility: visible;
+  padding: 10px;
+  width: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.75);
+}
+
+.user-actions label{
+  font-weight: bolder;
+  font-size: 18px;
+  padding-bottom: 6px;
+  padding-top: 12px;
+  border-bottom: white solid 1px;
+}
+
+.specific-info label {
+  font-weight: bolder;
+  font-size: 18px;
+  padding-bottom: 6px;
+  padding-top: 12px;
+  border-bottom: white solid 1px;
+}
+
+.images{
+  width: 30%;
+  padding-left: 10%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-right: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.images .profile-pic img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0px 7px 10px 6px rgba(0,0,0,0.3);
+}
+
+.button-user-updates {
+  padding-top: 20px;
+  display: flex;
+}

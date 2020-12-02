@@ -1,0 +1,52 @@
+<div class="main-theme">
+  <h1>Find a place to get lost</h1>
+  <div class="arrow-animation">
+    <img src="https://pngimage.net/wp-content/uploads/2018/06/white-arrow-down-png-5.png" alt="aro">
+  </div>
+</div>
+
+<div class="search-container">
+  <div class="caption">
+    <h2>Most Trusted Booking Website</h2>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+    <div class="input-container">
+      <h3>Places to stay</h3>
+      <div class="textbox">
+        <label for="location">Location</label><br>
+        <input type="text" id="location" name="location" placeholder="Where" formControlName="location"
+        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors}">
+        <div *ngIf="submitted && f.location.errors" class="invalid-input">
+          <div *ngIf="f.location.errors.required">Location Required</div>
+        </div>
+      </div>
+      <div class="textbox">
+        <label for="checkin">Check-in</label><br>
+        <input type="date" id="checkin" name="checkin" placeholder="CheckIn" formControlName="checkin"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.checkin.errors}">
+        <div *ngIf="submitted && f.checkin.errors" class="invalid-input">
+          <div *ngIf="f.checkin.errors.required">checkin Required</div>
+        </div>
+      </div>
+      <div class="textbox">
+        <label for="checkout">Check-out</label><br>
+        <input type="date" id="checkout" name="checkout" placeholder="CheckOut" formControlName="checkout"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.checkout.errors}">
+        <div *ngIf="submitted && f.checkout.errors" class="invalid-input">
+          <div *ngIf="f.checkout.errors.required">checkout Required</div>
+        </div>
+      </div>
+      <div class="textbox">
+        <label for="guests">Guests</label><br>
+        <input type="number" id="guests" min="1" max="10" name="guests" placeholder="Guests" formControlName="guests"
+               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.guests.errors}">
+        <div *ngIf="submitted && f.guests.errors" class="invalid-input">
+          <div *ngIf="f.guests.errors.required">guests Required</div>
+        </div>
+      </div>
+      <button class="btn btn-primary">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,129 @@
+<div class="edit-rental-container">
+
+  <div class="container-box-shadowed">
+    <div class="header">
+      <h1 *ngIf="!isAddMode">Settings</h1>
+    </div>
+
+    <div class="details">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="container row">
+          <div class="col-md-6">
+            <input type="file" (change)="onFileChanged($event)">
+          </div>
+          <div class="col-md-6">
+            <input type="button" (click)="onUpload()" value="upload">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="info">
+            <div class="label">
+              <label>Name</label>
+            </div>
+            <input [placeholder]="rental.name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Name is required</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="label">
+              <label>Location</label>
+            </div>
+            <input [placeholder]="rental.location" type="text" formControlName="location" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+            <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+              <div *ngIf="f.location.errors.required">location is required</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="label">
+              <label>Description</label>
+            </div>
+            <input [placeholder]="rental.description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+              <div *ngIf="f.description.errors.required">description is required</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="label">
+              <label>Maximum Capacity</label>
+            </div>
+            <input [placeholder]="rental.capacity" type="number" formControlName="capacity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.capacity.errors }" />
+            <div *ngIf="submitted && f.capacity.errors" class="invalid-feedback">
+              <div *ngIf="f.capacity.errors.required">capacity is required</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="label">
+              <label>CostPerPerson</label>
+            </div>
+            <input type="number" [placeholder]="rental.costPerPerson" formControlName="costPerPerson" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.costPerPerson.errors }" />
+            <div *ngIf="submitted && f.costPerPerson.errors" class="invalid-feedback">
+              <div *ngIf="f.costPerPerson.errors.required">CostPerPerson is required</div>
+            </div>
+          </div>
+
+
+          <div class="info">
+            <div class="label">
+              <label>Minimum Price</label>
+            </div>
+            <input type="number" [placeholder]="rental.minPrice" formControlName="minPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.minPrice.errors }" />
+            <div *ngIf="submitted && f.minPrice.errors" class="invalid-feedback">
+              <div *ngIf="f.minPrice.errors.required">minPrice is required</div>
+            </div>
+          </div>
+
+          <div class="info">
+            <div class="label">
+              <label>Number Of Beds</label>
+            </div>
+            <input type="number" [placeholder]="rental.numOfBeds" formControlName="numOfBeds" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBeds.errors }" />
+            <div *ngIf="submitted && f.numOfBeds.errors" class="invalid-feedback">
+              <div *ngIf="f.numOfBeds.errors.required">numOfBeds is required</div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="label">
+              <label>Number Of Bedrooms</label>
+            </div>
+            <input type="number" [placeholder]="rental.numOfBedrooms" formControlName="numOfBedrooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBedrooms.errors }" />
+            <div *ngIf="submitted && f.numOfBedrooms.errors" class="invalid-feedback">
+              <div *ngIf="f.numOfBedrooms.errors.required">numOfBedrooms is required</div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="label">
+              <label>Number Of Bathrooms</label>
+            </div>
+            <input type="number" [placeholder]="rental.numOfBathrooms" formControlName="numOfBathrooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBathrooms.errors }" />
+            <div *ngIf="submitted && f.numOfBathrooms.errors" class="invalid-feedback">
+              <div *ngIf="f.numOfBathrooms.errors.required">numOfBathrooms is required</div>
+            </div>
+          </div>
+          <div class="info">
+            <div class="label">
+              <label>squareMeter</label>
+            </div>
+            <input type="number" [placeholder]="rental.squareMeters" formControlName="squareMeters" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.squareMeters.errors }" />
+            <div *ngIf="submitted && f.squareMeters.errors" class="invalid-feedback">
+              <div *ngIf="f.squareMeters.errors.required">squareMeters is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              S a v e
+            </button>
+            <a class="nav-item nav-link" (click)="cancel()">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

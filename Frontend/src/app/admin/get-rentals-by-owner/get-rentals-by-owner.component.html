@@ -1,0 +1,33 @@
+
+<div class="house-details-box">
+  <table class="table table-striped">
+    <a (click)="Back()"> Go Back </a>
+    <tbody>
+    <tr *ngFor="let rental of rentals">
+      <div class="booking-box-container">
+        <div class="images">
+          <div class="avatar">
+            <img [src]="rental.rentHouseProfilePic.picByte | getMainRentalPic" alt="Avatar" class="avatar">
+          </div>
+        </div>
+        <div class="main-details">
+          <div class="content-box-center">
+            <label>
+              Name
+            </label>
+            <td>{{rental.name}}</td>
+            <label>
+              Location
+            </label>
+            <td>{{rental.location}}</td>
+            <label>
+              Description
+            </label>
+            <td>{{rental.description}}</td>
+          </div>
+        </div>
+      </div>
+    </tr>
+    </tbody>
+  </table>
+</div>

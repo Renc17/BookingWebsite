@@ -1,0 +1,242 @@
+*{
+  font-family: "Roboto", sans-serif;
+}
+
+.fa-star {
+ color: crimson;
+}
+
+.rentals-profile-container {
+  background-color: white;
+}
+
+.rentals-profile-details-box {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.rentals-profile-images .main-pic img{
+  width: 60%;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+.main-details {
+  margin-top: 30px;
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.main-details-header {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+.name {
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.location {
+  margin-top: 5px;
+  padding: 5px 5px 5px 0px;
+  color: rgba(0,0,0,0.9);
+  border-bottom: solid 1px rgba(0,0,0,0.5);
+}
+
+.location .address {
+  font-weight: normal;
+  font-size: small;
+}
+
+.hostel-details {
+  margin-top: 30px;
+}
+
+.hostel-details label {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.rentals-main-details {
+  font-size: 15px;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+
+.cost-details-box {
+  width: 20%;
+  margin-right: 30px;
+  padding: 10px;
+  border-radius: 5%;
+  box-shadow: 0px 7px 29px 14px rgba(0,0,0,0.25);
+}
+
+.price-details {
+  padding: 5px;
+  margin-bottom: 5px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.btn-book {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5px;
+}
+
+button{
+  width: 60%;
+  color: white;
+  font-weight: bold;
+  padding: 4px;
+  border: transparent;
+  background-color: rgba(142, 13, 13, 0.6);
+}
+
+button:hover{
+  transition-duration: 0.6s;
+  background-color: rgba(142, 13, 13, 0.9);
+}
+
+.total-details-calculation {
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+.booking-details {
+  border-radius: 3%;
+  border: solid 1px rgba(0,0,0,0.6);
+  margin-bottom: 10px;
+}
+
+.price {
+  padding: 5px;
+  margin-bottom: 5px;
+  text-align: right;
+}
+
+.booking-details .row-2{
+  font-size: 14px;
+  padding: 5px;
+}
+
+.booking-details .row-2 label {
+  font-weight: bolder;
+  font-size: small;
+  padding-bottom: 5px;
+}
+
+.total-details {
+  font-size: 14px;
+  padding: 5px;
+}
+
+.total {
+  font-weight: bolder;
+  text-align: right;
+  padding: 5px;
+}
+
+.extras {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.extras label {
+  font-weight: bolder;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.description {
+  width: 60%;
+  padding: 10px 10px 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+}
+
+.facilities {
+  width: 60%;
+  padding: 10px 10px 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amenity-part{
+  padding: 5px;
+}
+
+.critics {
+  width: 60%;
+  padding: 10px 10px 10px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 60px;
+}
+
+.critics .comment-header {
+  font-size: medium;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.critics .comment-body {
+  font-weight: normal;
+  padding: 10px;
+}
+
+.map {
+  width: 100%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.recommendations {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(245,222,179,0.3);
+  box-shadow: 0px 7px 29px 10px rgba(0,0,0,0.25);
+}
+
+.about-footer-box {
+  margin-top: 60px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.topics label {
+  font-weight: bolder;
+  color: rgba(0,0,0,0.9);
+}
+
+.topics li{
+  margin-top: 5px;
+  list-style: none;
+  padding: 5px 5px 5px 0px;
+}
+
+.topics li a {
+  font-weight: lighter;
+  font-size: 15px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.8);
+}
+
+.topics li a:hover {
+  text-decoration: underline;
+}

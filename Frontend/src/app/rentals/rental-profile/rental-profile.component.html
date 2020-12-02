@@ -1,0 +1,260 @@
+
+<div class="rentals-profile-container">
+  <div class="rentals-profile-details-box">
+    <div class="rentals-profile-images">
+      <div class="main-pic" *ngIf=rental>
+        <img [src]="rental.rentHouseProfilePic.picByte | getMainRentalPic" alt="profile picture">
+      </div>
+    </div>
+
+    <div class="main-details">
+      <div class="main-details-header">
+        <div class="name" *ngIf="rental">
+          {{ rental.name }}
+        </div>
+        <div class="location" *ngIf="rental">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star"></span>
+          {{ rental.location }}
+          <div class="address">
+
+            {{ rental.address }}
+          </div>
+
+        </div>
+        <div class="hostel-details" *ngIf="owner">
+          <label>
+            Private House Hosted By {{ owner.name }} {{ owner.surname }}
+          </label>
+          <div class="rentals-main-details" *ngIf="rental">
+            {{ bookingParams.guests }} visitors *
+            {{ rental.numOfBedrooms }} bedrooms *
+            {{ rental.numOfBeds }} beds *
+            {{ rental.numOfBathrooms }} baths
+          </div>
+        </div>
+      </div>
+      <div class="cost-details-box">
+        <div class="price-details">
+          <label>
+            Price
+          </label>
+        </div>
+        <div class="price" *ngIf="rental">
+          {{ rental.minPrice }} / night
+        </div>
+        <div class="booking-details">
+          <div class="row-2">
+           <label>
+              Check In
+            </label>
+            <div class="dates">
+              {{ bookingParams.checkin }}
+            </div>
+          </div>
+          <div class="row-2">
+            <label>
+              Check Out
+            </label>
+            <div class="dates">
+              {{ bookingParams.checkout}}
+            </div>
+          </div>
+          <div class="row-2">
+            <label>
+              Guests
+            </label>
+            <div class="guests">
+              {{ bookingParams.guests}}
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-book">
+          <button (click)="OnSubmit()">Book</button>
+        </div>
+        <div class="total-details-calculation">
+          <label>
+            Total
+          </label>
+        </div>
+        <div class="total-details" *ngIf="rental">
+          <div *ngIf="bookingParams.guests > rental.minNumGuests">
+            <div>
+              {{ bookingParams.guests }} guests stay = {{ costByNumGuests }} / night
+            </div>
+            <div>
+              {{ costByNumGuests }} / night x {{ stayingDuration }}
+            </div>
+          </div>
+          <div *ngIf="bookingParams.guests <= rental.minNumGuests">
+            {{ rental.minPrice }} / night x {{ stayingDuration }}
+          </div>
+        </div>
+        <div class="total">
+          {{ totalPrice }}
+        </div>
+      </div>
+    </div>
+    <div class="extras">
+      <label>
+        Description
+      </label>
+      <div class="description" *ngIf="rental">
+        {{ rental.description }}
+      </div>
+      <label>
+        Facilities
+      </label>
+      <div class="facilities" *ngIf="rental">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="column1">
+          <div class="amenity-part" *ngIf="!rental.kitchen" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-cutlery"></i>
+            Kitchen
+          </div>
+          <div class="amenity-part" *ngIf="rental.kitchen">
+            <i class="fa fa-cutlery"></i>
+            Kitchen
+          </div>
+          <div class="amenity-part" *ngIf="!rental.fak" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-plus-square"></i>
+            First Aid Kit
+          </div>
+          <div class="amenity-part" *ngIf="rental.fak">
+            <i class="fa fa-plus-square"></i>
+            First Aid Kit
+          </div>
+          <div class="amenity-part" *ngIf="!rental.freeParking" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-car"></i>
+            Free Parking
+          </div>
+          <div class="amenity-part" *ngIf="rental.freeParking">
+            <i class="fa fa-car"></i>
+            Free Parking
+          </div>
+          <div class="amenity-part" *ngIf="!rental.ac" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-snowflake-o"></i>
+            AirCondition
+          </div>
+          <div class="amenity-part" *ngIf="rental.ac">
+            <i class="fa fa-snowflake-o"></i>
+            AirCondition
+          </div>
+          <div class="amenity-part" *ngIf="!rental.carbonAlarm" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-fire"></i>
+            Carbon Alarm
+          </div>
+          <div class="amenity-part" *ngIf="rental.carbonAlarm">
+            <i class="fa fa-fire"></i>
+            Carbon Alarm
+          </div>
+        </div>
+        <div class="column2">
+          <div class="amenity-part" *ngIf="!rental.wifi" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-wifi"></i>
+            WiFi
+          </div>
+          <div class="amenity-part" *ngIf="rental.wifi">
+            <i class="fa fa-wifi"></i>
+            WiFi
+          </div>
+          <div class="amenity-part" *ngIf="!rental.hairDryer" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-bullhorn"></i>
+            Hair Dryer
+          </div>
+          <div class="amenity-part" *ngIf="rental.hairDryer">
+            <i class="fa fa-bullhorn"></i>
+            Hair Dryer
+          </div>
+          <div class="amenity-part" *ngIf="!rental.tv" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-tv"></i>
+            TV
+          </div>
+          <div class="amenity-part" *ngIf="rental.tv">
+            <i class="fa fa-tv"></i>
+            TV
+          </div>
+          <div class="amenity-part" *ngIf="!rental.iron" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-database"></i>
+            Iron
+          </div>
+          <div class="amenity-part" *ngIf="rental.iron" >
+            <i class="fa fa-database"></i>
+            Iron
+          </div>
+          <div class="amenity-part" *ngIf="!rental.smokeAlarm" style="color: rgba(0,0,0,0.4); text-decoration: line-through">
+            <i class="fa fa-fire"></i>
+            Smoke Alarm
+          </div>
+          <div class="amenity-part" *ngIf="rental.smokeAlarm">
+            <i class="fa fa-fire"></i>
+            Smoke Alarm
+          </div>
+        </div>
+      </div>
+      <label>
+        Critics
+      </label>
+      <div class="critics">
+        <table>
+          <tr *ngFor="let comment of comments">
+            <div class="comment-header">
+              User{{ comment.user.name}}
+                {{ comment.user.surname}}commented
+            </div>
+            <div class="comment-body">
+              {{ comment.comment }}
+            </div>
+          </tr>
+        </table>
+      </div>
+      <label>
+        Map
+      </label>
+    </div>
+  </div>
+
+  <div class="map" id="map"></div>
+
+  <div class="recommendations">
+    <table>
+      <tr *ngFor="let rec of recommendations">
+        <div *ngIf="rec !== null">
+          {{ rec.name }}
+        </div>
+      </tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <div class="about-footer-box">
+    <div class="topics">
+      <label>ABOUT</label>
+      <li class="links"><a href="#" >How Bookings.com Work</a></li>
+      <li class="links"><a href="#" >NewsRoom</a></li>
+      <li class="links"><a href="#" >Bookings.com Plus</a></li>
+      <li class="links"><a href="#" >Bookings.com Lux</a></li>
+      <li class="links"><a href="#" >Bookings.com for Work</a></li>
+      <li class="links"><a href="#" >Careers</a></li>
+    </div>
+    <div class="topics">
+      <label>COMMUNITY</label>
+      <li class="links"><a href="#" >Diversity & Belonging</a></li>
+      <li class="links"><a href="#" >Against Discrimination</a></li>
+      <li class="links"><a href="#" >Accessibility</a></li>
+      <li class="links"><a href="#" >Bookings.com Associates</a></li>
+      <li class="links"><a href="#" >Invite Friends</a></li>
+      <li class="links"><a href="#" >Gift Cards</a></li>
+    </div>
+    <div class="topics">
+      <label>SUPPORT</label>
+      <li class="links"><a href="#" >Updates</a></li>
+      <li class="links"><a href="#" >Help Center</a></li>
+      <li class="links"><a href="#" >Cancellation Options</a></li>
+      <li class="links"><a href="#" >Neighborhood Support</a></li>
+      <li class="links"><a href="#" >Trust & Safety</a></li>
+    </div>
+    </div>
+  </div>
+</div>

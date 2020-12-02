@@ -1,0 +1,175 @@
+<div class="add-rentals-container">
+  <div class="add-rentals-header">
+    <h1>N e w R e n t a l</h1>
+  </div>
+
+  <div class="add-rentals-details">
+    <div class="add-rentals-form">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="info">
+          <div class="col-md-6">
+            <label>
+              Add A Photo of Your Property
+            </label>
+            <input type="file" (change)="onFileChanged($event)">
+          </div>
+          <!--<div class="col-md-6">
+            <label>
+              Add Interior Photos of Your Property
+            </label>
+            <input type="file" multiple (change)="selectFiles($event)" />
+          </div>-->
+
+          <div class="label">
+            <label>Name</label>
+          </div>
+          <input type="text" placeholder="Name" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+          <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Description</label>
+          </div>
+          <input type="text" placeholder="description" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
+          <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+            <div *ngIf="f.description.errors.required">description is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Maximum Capacity</label>
+          </div>
+          <input type="number" placeholder="maxCapacity" min="1" formControlName="capacity" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.capacity.errors }" />
+          <div *ngIf="submitted && f.capacity.errors" class="invalid-feedback">
+            <div *ngIf="f.capacity.errors.required">maxCapacity is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>CostPerPerson</label>
+          </div>
+          <input type="number" placeholder="CostPerPerson" min="0" formControlName="costPerPerson" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.costPerPerson.errors }" />
+          <div *ngIf="submitted && f.costPerPerson.errors" class="invalid-feedback">
+            <div *ngIf="f.costPerPerson.errors.required">CostPerPerson is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>CostPerPerson</label>
+          </div>
+          <input type="number" placeholder="minNumGuests" min="0" formControlName="minNumGuests" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.minNumGuests.errors }" />
+          <div *ngIf="submitted && f.minNumGuests.errors" class="invalid-feedback">
+            <div *ngIf="f.minNumGuests.errors.required">minNumGuests is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Minimum Number Of Nights</label>
+          </div>
+          <input type="number" placeholder="minNumOfNights" min="0" formControlName="minNumOfNights" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.minNumOfNights.errors }" />
+          <div *ngIf="submitted && f.minNumOfNights.errors" class="invalid-feedback">
+            <div *ngIf="f.minNumOfNights.errors.required">minNumOfNights is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Minimum Price</label>
+          </div>
+          <input type="number" placeholder="minPrice" min="0" formControlName="minPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.minPrice.errors }" />
+          <div *ngIf="submitted && f.minPrice.errors" class="invalid-feedback">
+            <div *ngIf="f.minPrice.errors.required">minPrice is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Number Of Beds</label>
+          </div>
+          <input type="number" placeholder="numOfBeds" min="0" formControlName="numOfBeds" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBeds.errors }" />
+          <div *ngIf="submitted && f.numOfBeds.errors" class="invalid-feedback">
+            <div *ngIf="f.numOfBeds.errors.required">numOfBeds is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Number Of Bedrooms</label>
+          </div>
+          <input type="number" placeholder="numOfBedrooms" min="0" formControlName="numOfBedrooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBedrooms.errors }" />
+          <div *ngIf="submitted && f.numOfBedrooms.errors" class="invalid-feedback">
+            <div *ngIf="f.numOfBedrooms.errors.required">numOfBedrooms is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>Number Of Bathrooms</label>
+          </div>
+          <input type="number" placeholder="numOfBathrooms" min="0" formControlName="numOfBathrooms" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.numOfBathrooms.errors }" />
+          <div *ngIf="submitted && f.numOfBathrooms.errors" class="invalid-feedback">
+            <div *ngIf="f.numOfBathrooms.errors.required">numOfBathrooms is required</div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="label">
+            <label>squareMeter</label>
+          </div>
+          <input type="number" placeholder="squareMeter" min="0" formControlName="squareMeters" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.squareMeters.errors }" />
+          <div *ngIf="submitted && f.squareMeters.errors" class="invalid-feedback">
+            <div *ngIf="f.squareMeters.errors.required">squareMeters is required</div>
+          </div>
+        </div>
+        <div class="info" >
+          <div class="label">
+            <label>Facilities</label>
+          </div>
+          <input type="checkbox" formControlName="kitchen" id="kitchen" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.kitchen.errors }" />
+          <label for="kitchen" class="form-check-label">Kitchen</label>
+
+          <input type="checkbox" formControlName="freeParking" id="freeParking" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.freeParking.errors }" />
+          <label for="freeParking" class="form-check-label">Free Parking</label>
+
+          <input type="checkbox" formControlName="ac" id="ac" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.ac.errors }" />
+          <label for="ac" class="form-check-label">AirCondition</label>
+
+          <input type="checkbox" formControlName="fak" id="fak" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.fak.errors }" />
+          <label for="fak" class="form-check-label">First aid Kit</label>
+
+          <input type="checkbox" formControlName="wifi" id="wifi" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.wifi.errors }" />
+          <label for="wifi" class="form-check-label">Wifi</label>
+
+          <input type="checkbox" formControlName="hairDryer" id="hairDryer" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.hairDryer.errors }" />
+          <label for="hairDryer" class="form-check-label">Hair Dryer</label>
+
+          <input type="checkbox" formControlName="tv" id="tv" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.tv.errors }" />
+          <label for="tv" class="form-check-label">TV</label>
+
+          <input type="checkbox" formControlName="iron" id="iron" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.iron.errors }" />
+          <label for="iron" class="form-check-label">Iron</label>
+
+          <input type="checkbox" formControlName="smokeAlarm" id="smokeAlarm" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.smokeAlarm.errors }" />
+          <label for="smokeAlarm" class="form-check-label">Smoke Alarm</label>
+
+        </div>
+
+        <div class="map" id="map"></div>
+        <div *ngIf="rental">
+          Road :
+          {{ rental.address.road }}
+          City :
+          {{ rental.address.city }}
+          Post Code :
+          {{ rental.address.postCode }}
+          Country :
+          {{ rental.address.country }}
+        </div>
+
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            S a v e
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
