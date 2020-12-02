@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "Bokkings.app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Description for Bokkings.app.jwtSecret."
+    },
+    {
+      "name": "application.jwt.tokenExipationAfterDays",
+      "type": "java.lang.String",
+      "description": "Description for application.jwt.tokenExipationAfterDays."
+    }
+  ] }
